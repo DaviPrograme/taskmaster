@@ -1,0 +1,24 @@
+taskmaster:
+  email: "example@gmail.com"
+  uid: "user"
+  gid: "user"
+programs:
+  teste:
+    cmd: "/home/user/Desktop/taskmaster/exec_teste/teste"
+    numprocs: 1
+    umask: 022
+    workingdir: /home/user/Desktop/taskmaster
+    autostart: true
+    autorestart: false
+    exitcodes:
+      - 0
+      - 2
+    startretries: 3
+    starttime: 5
+    stopsignal: TERM
+    stoptime: 10
+    stdout: /home/user/Desktop/taskmaster/logs/teste.out.log
+    stderr: /home/user/Desktop/taskmaster/logs/teste.err.log
+    env:
+      STARTED_BY: taskmaster
+      ANSWER: "42"
