@@ -55,7 +55,7 @@ programs:
 
 Dentro de um arquivo de configuração do Taskmaster temos dois campos principais: O "**taskmaster**" e o "**proograms**".
 
-### Seção Taskmaster
+### Seção "Taskmaster"
 
 Na seção **taskmaster** podemos inserir os seguintes campos:
 
@@ -84,7 +84,7 @@ Na seção **taskmaster** podemos inserir os seguintes campos:
  
 _OBS: Como nenhum campo dentro da seção taskmaster é obrigatório essa seção pode existir ou não_
 
-### Seção Programs
+### Seção "Programs"
 
 Na seção **programs** é onde especificamos os grupos de processos. No exemplo de arquivo de configuração colocamos o nome de um grupo de processo de "**teste**", mas poderiamos chamar de qualquer outro nome. Nesta seção pode ter mais de um grupo. Os campos que poodem ser inseridos dentroo de um grupo de processo são os seguintes:
 
@@ -158,3 +158,37 @@ Na seção **programs** é onde especificamos os grupos de processos. No exemplo
     - descrição: representa as variáveis de ambiente que tem que ser criadas no ambiente do processo
     - obrigatório: NÃO
     - tipo de valor: dict
+ 
+
+## Taskmasterd
+
+O Taskmasterd é um daemon criado para gerenciar processos em sistemas nix-like (Linux, Unix, etc.). Ele facilita o monitoramento e controle de vários processos em segundo plano, automatizando o gerenciamento de tarefas ou serviços. Aqui estão algumas das suas principais funcionalidades:
+
+- Iniciar, parar e reiniciar processos automaticamente – O Supervisord pode ser configurado para iniciar processos automaticamente na inicialização do sistema, reiniciar processos se eles falharem e parar processos conforme necessário.
+- Gerenciamento de logs – Ele captura e armazena os logs dos processos que gerencia, facilitando a depuração e a manutenção.
+- Monitoramento de processos – O Supervisord monitora os processos e pode reiniciar automaticamente um processo se ele falhar ou travar.
+
+Para executar o servidor estando na raiz doo projeto é só executar o seguinte comando: 
+
+```python3 Taskmasterd/taskmasterd.py ./configs/default.yaml```
+
+O segundo parâmetro passado no comando acima representa o path do arquivo de configuração a ser executado. Caso queira executar o servidor e mante-lo atiivo no terminal usado no momento pode executar da seguinte forma:
+
+```python3 Taskmasterd/taskmasterd.py ./configs/default.yaml --no-daemon```
+
+## TaskmasterCLT
+
+O TaskmasterCLT é a ferramenta de linha de comando que acompanha o Taskmasterd, permitindo aos usuários interagir com o daemon do Supervisor para gerenciar os processos configurados. Através do TaskmasterCLT, você pode emitir comandos para controlar os processos monitorados pelo Supervisord.
+
+Aqui estão algumas das funcionalidades do TaskmasterCLT:
+
+- Iniciar, parar e reiniciar processos – Você pode iniciar, parar ou reiniciar processos específicos ou todos os processos gerenciados pelo Supervisord usando comandos simples.
+- Verificar o status dos processos – Com o TaskmasterCLT, é possível listar todos os processos monitorados e ver o status de cada um (ex.: running, stopped, starting, etc.).
+- forçar a releitura do arrquivo de configuração e passar um novo arquivo de confiiguração
+- Desligar o servidor
+
+Parra iniciar o TaskmasterCLT basta executar o seguinte comando a partir da raiz do projeto:
+
+```python3 TaskmasterCLT/taskmasterclt.py ```
+
+
