@@ -53,3 +53,31 @@ programs:
       ANSWER: "42"
 ```
 
+Dentro de um arquivo de configuração do Taskmaster temos dois campos principais: O "**taskmaster**" e o "**proograms**".
+
+Na seção **taskmaster** podemos inserir os seguintes campos:
+
+- **logfile**:
+    - descrição: Este campo informa ao programa onde esta o arquiivo de logs do serrvidor  e caso esse campoo seja inserido no arquivo de coonfiguração será posiivel verificar todos oos logs peloo browser noo endereço http://localhost:4242/logs; 
+    - obrigatório: NÃO
+    - tipo de valor: string
+
+
+- **email**:
+    - descrição: O endereço de email que recebera os alertas do servidor de situações vistas como criticas
+    - obrigatório: NÃO
+    - tipo de valor: string
+
+
+- **uid**:
+    - descrição: representa um usuario válido no sistema em que o servidor esta hospedado. Todos os processos criados pelo servidor serão criado com as permissõoes desse usuário.
+    - obrigatório: NÃO
+    - tipo de valor: string
+
+
+- **gid**:
+    - descrição: representa um grupo válido no sistema em que o servidor esta hospedado. Todos os processos criados pelo servidor serão criado com as permissõoes desse usuário.
+    - obrigatório: NÃO
+    - tipo de valor: string
+ 
+_OBS: Coomo nenhum campo dentro da seção taskmaster é obrigatório  essa seçãoo pode existir ou não_ 
