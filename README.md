@@ -9,17 +9,6 @@ O Taskmaster é um projeto inspirado no [Supervisor](http://supervisord.org/inde
 - Receber sinais para atualizar a configuração ou encerrar o daemon de forma controlada.
 - Registrar eventos em logs para auditoria e depuração.
 
-
-## Comandos de Controle
-O Taskmaster fornece uma interface shell com os seguintes comandos:
-
-- status: Mostra o estado de todos os processos configurados, informando se estão rodando ou parados.
-- start: Inicia um ou mais processos definidos no arquivo de configuração.
-- stop: Encerra um ou mais processos de forma controlada.
-- restart: Reinicia processos, interrompendo-os e iniciando-os novamente.
-- reload: Recarrega o arquivo de configuração durante a execução do Taskmaster, aplicando mudanças sem interromper processos que não foram alterados.
-- exit: Encerra o daemon Taskmaster e todos os processos supervisionados.
-
 ## Arquivo de Configuração
 O Taskmaster usa um arquivo de configuração que define como os processos devem ser gerenciados, especificando comandos, número de processos, reinício automático, sinais de término e opções como redirecionamento de saída e variáveis de ambiente.
 
@@ -190,5 +179,18 @@ Aqui estão algumas das funcionalidades do TaskmasterCLT:
 Parra iniciar o TaskmasterCLT basta executar o seguinte comando a partir da raiz do projeto:
 
 ```python3 TaskmasterCLT/taskmasterclt.py ```
+
+
+### Comandos de Controle
+O Taskmaster fornece uma interface shell com os seguintes comandos:
+
+- status: Mostra o estado de todos os processos configurados, informando se estão rodando ou parados.
+- start: Inicia um ou mais processos definidos no arquivo de configuração.
+- stop: Encerra um ou mais processos de forma controlada.
+- restart: Reinicia processos, interrompendo-os e iniciando-os novamente.
+- reload: Recarrega o arquivo de configuração durante a execução do Taskmaster, aplicando mudanças sem interromper processos que não foram alterados.
+- reread: recarrega o arquivo igual o reload mas diferente do reload só muda as configurações após executar o update.
+- update: altera as configurações de acordo com o reread.
+- exit: Encerra o daemon Taskmaster e todos os processos supervisionados.
 
 
