@@ -55,6 +55,8 @@ programs:
 
 Dentro de um arquivo de configuração do Taskmaster temos dois campos principais: O "**taskmaster**" e o "**proograms**".
 
+### Seção Taskmaster
+
 Na seção **taskmaster** podemos inserir os seguintes campos:
 
 - **logfile**:
@@ -80,4 +82,79 @@ Na seção **taskmaster** podemos inserir os seguintes campos:
     - obrigatório: NÃO
     - tipo de valor: string
  
-_OBS: Coomo nenhum campo dentro da seção taskmaster é obrigatório  essa seçãoo pode existir ou não_ 
+_OBS: Como nenhum campo dentro da seção taskmaster é obrigatório essa seção pode existir ou não_
+
+### Seção Programs
+
+Na seção **programs** é onde especificamos os grupos de processos. No exemplo de arquivo de configuração colocamos o nome de um grupo de processo de "**teste**", mas poderiamos chamar de qualquer outro nome. Nesta seção pode ter mais de um grupo. Os campos que poodem ser inseridos dentroo de um grupo de processo são os seguintes:
+
+
+- **cmd**:
+    - descrição: representa o comando a ser usado para iniciar o processo
+    - obrigatório: SIM
+    - tipo de valor: string
+
+- **numprocs**:
+    - descrição: representa o numero de processos que tem que ser iniciado com o **cmd**
+    - obrigatório: NÃO
+    - tipo de valor: integer
+ 
+- **umask**:
+    - descrição: representa as permissões que o processo criado terá 
+    - obrigatório: NÃO
+    - tipo de valor: integer
+
+- **workingdir**:
+    - descrição: representa o path raiz do projeto 
+    - obrigatório: NÃO
+    - tipo de valor: string
+ 
+- **autostart**:
+    - descrição: esse campo especifica se o processo será iniciado de forma automática ou não
+    - obrigatório: NÃO
+    - tipo de valor: boolean
+
+- **autorestart**:
+    - descrição: esse campo especifica se o processo será reiniciado de forma automatica ou não. Os valores que esse campo pode receber são true, false e "unexpected". 
+    - obrigatório: NÃO
+    - tipo de valor: boolean | string
+
+- **exitcodes**:
+    - descrição: são os codigos de saida doo processo que são considerado como normais, qualquer outro codiigo de saida que o processo tiver vai ser considerado como inesperado (ou "unexpcted")
+    - obrigatório: NÃO
+    - tipo de valor: lista
+ 
+- **startretries**:
+    - descrição: representa o número de tentativas que o servidor realizará para iniciar um processo   
+    - obrigatório: NÃO
+    - tipo de valor: integer
+ 
+- **starttime**:
+    - descrição: representa o tempoo que um processo tem qque ficar ativo para ser considerado como um processo iniciado coom sucesso 
+    - obrigatório: NÃO
+    - tipo de valor: integer
+ 
+- **stopsignal**:
+    - descrição: representa o sinal que oo servidor tem que enviar para um processo para finaliza-lo de forma "graciosa"
+    - obrigatório: NÃO
+    - tipo de valor: string
+ 
+- **stoptime**:
+    - descrição: representa o tempo que o servidor tem que esperar após enviar o *stopsignal* para observarr se o coomando funcionou. Após esse tempo se o processo não tiver sido finalizado o servidor forçará a finalização de forma "bruta".
+    - obrigatório: NÃO
+    - tipo de valor: integer
+ 
+- **stdout**:
+    - descrição: representa o path do arquivo que recebera o stdout do processo criado
+    - obrigatório: NÃO
+    - tipo de valor: string
+ 
+- **stderr**:
+    - descrição: representa o path do arquivo que recebera o stderr do processo criado
+    - obrigatório: NÃO
+    - tipo de valor: string
+ 
+- **env**:
+    - descrição: representa as variáveis de ambiente que tem que ser criadas no ambiente do processo
+    - obrigatório: NÃO
+    - tipo de valor: dict
