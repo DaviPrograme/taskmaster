@@ -191,6 +191,6 @@ O Taskmaster fornece uma interface shell com os seguintes comandos:
 - reload: Recarrega o arquivo de configuração durante a execução do Taskmaster, aplicando mudanças sem interromper processos que não foram alterados.
 - reread: recarrega o arquivo igual o reload mas diferente do reload só muda as configurações após executar o update.
 - update: altera as configurações de acordo com o reread.
-- exit: Encerra o daemon Taskmaster e todos os processos supervisionados.
+- exit: Encerra o TasmasterCLT
 - shutdown: Encerra o Taskmasterd
 
