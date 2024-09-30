@@ -153,9 +153,9 @@ Na seção **programs** é onde especificamos os grupos de processos. No exemplo
 
 O Taskmasterd é um daemon criado para gerenciar processos em sistemas nix-like (Linux, Unix, etc.). Ele facilita o monitoramento e controle de vários processos em segundo plano, automatizando o gerenciamento de tarefas ou serviços. Aqui estão algumas das suas principais funcionalidades:
 
-- Iniciar, parar e reiniciar processos automaticamente – O Supervisord pode ser configurado para iniciar processos automaticamente na inicialização do sistema, reiniciar processos se eles falharem e parar processos conforme necessário.
+- Iniciar, parar e reiniciar processos automaticamente – O Taskmasterd pode ser configurado para iniciar processos automaticamente na inicialização do sistema, reiniciar processos se eles falharem e parar processos conforme necessário.
 - Gerenciamento de logs – Ele captura e armazena os logs dos processos que gerencia, facilitando a depuração e a manutenção.
-- Monitoramento de processos – O Supervisord monitora os processos e pode reiniciar automaticamente um processo se ele falhar ou travar.
+- Monitoramento de processos – O Taskmasterd monitora os processos e pode reiniciar automaticamente um processo se ele falhar ou travar.
 
 Para executar o servidor estando na raiz doo projeto é só executar o seguinte comando: 
 
@@ -167,11 +167,11 @@ O segundo parâmetro passado no comando acima representa o path do arquivo de co
 
 ## TaskmasterCLT
 
-O TaskmasterCLT é a ferramenta de linha de comando que acompanha o Taskmasterd, permitindo aos usuários interagir com o daemon para gerenciar os processos configurados. Através do TaskmasterCLT, você pode emitir comandos para controlar os processos monitorados pelo Supervisord.
+O TaskmasterCLT é a ferramenta de linha de comando que acompanha o Taskmasterd, permitindo aos usuários interagir com o daemon para gerenciar os processos configurados. Através do TaskmasterCLT, você pode emitir comandos para controlar os processos monitorados pelo Taskmasterd.
 
 Aqui estão algumas das funcionalidades do TaskmasterCLT:
 
-- Iniciar, parar e reiniciar processos – Você pode iniciar, parar ou reiniciar processos específicos ou todos os processos gerenciados pelo Supervisord usando comandos simples.
+- Iniciar, parar e reiniciar processos – Você pode iniciar, parar ou reiniciar processos específicos ou todos os processos gerenciados pelo Taaskmasterd usando comandos simples.
 - Verificar o status dos processos – Com o TaskmasterCLT, é possível listar todos os processos monitorados e ver o status de cada um (ex.: running, stopped, starting, etc.).
 - forçar a releitura do arrquivo de configuração e passar um novo arquivo de confiiguração
 - Desligar o servidor
