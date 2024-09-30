@@ -167,7 +167,7 @@ O segundo parâmetro passado no comando acima representa o path do arquivo de co
 
 ## TaskmasterCLT
 
-O TaskmasterCLT é a ferramenta de linha de comando que acompanha o Taskmasterd, permitindo aos usuários interagir com o daemon do Supervisor para gerenciar os processos configurados. Através do TaskmasterCLT, você pode emitir comandos para controlar os processos monitorados pelo Supervisord.
+O TaskmasterCLT é a ferramenta de linha de comando que acompanha o Taskmasterd, permitindo aos usuários interagir com o daemon para gerenciar os processos configurados. Através do TaskmasterCLT, você pode emitir comandos para controlar os processos monitorados pelo Supervisord.
 
 Aqui estão algumas das funcionalidades do TaskmasterCLT:
 
